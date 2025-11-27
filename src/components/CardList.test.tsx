@@ -57,14 +57,14 @@ describe('CardList', () => {
 
     renderWithMantine(<CardList />);
 
-    // сначала есть Loading...
+
     expect(screen.getByText(/Loading.../i)).toBeInTheDocument();
 
-    // ждём, пока появится название миссии из мок-данных
+
     const missionTitle = await screen.findByText(missionName);
     expect(missionTitle).toBeInTheDocument();
 
-    // и название ракеты
+
     expect(screen.getByText(rocketName)).toBeInTheDocument();
   });
 
@@ -78,7 +78,6 @@ describe('CardList', () => {
 
     renderWithMantine(<CardList />);
 
-    // ждём, чтобы эффект успел дернуть fetch
     await screen.findByText(missionName);
 
     expect(fetchMock).toHaveBeenCalledTimes(1);
