@@ -6,7 +6,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
   },
-  base: '/',
+  base: '/mant-space323/',
    build: {
     outDir: 'docs',
   },
